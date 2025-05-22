@@ -1,0 +1,35 @@
+.RegisterOuterWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+  
+  .RegisterContainer {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .RegisterForm {
+    margin-bottom: 20px;
+  }
+  
+  .RegisterImage img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
