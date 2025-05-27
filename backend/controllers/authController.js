@@ -2,6 +2,7 @@ import { comparePassword, hashPassword } from "../helpers/authHelper.js";
 import JWT from "jsonwebtoken";
 import registerSchema from "../models/registerSchema.js";
 import noteSchema from "../models/noteSchema.js";
+import { sendWelcomeEmail } from "./sendEmail.js";
 
 // for registration
 export const registerController = async (req, res) => {
@@ -39,6 +40,9 @@ export const registerController = async (req, res) => {
       password: hashedPassword,
       confirm_password: hashedPassword,
     }).save();
+
+    // for sending welcome mail
+    await sendWelcomeEmail(email, name);
 
     res.status(201).send({
       success: true,
